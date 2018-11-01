@@ -414,6 +414,10 @@ ccextractorGUI_LDFLAGS = -framework OpenGL -framework Cocoa -framework IOKit -fr
 ccextractorGUI_LDADD += -lglfw  -lm -L/usr/local/lib -lpthread
 endif
 
+if SYS_IS_64_BIT
+ccextractor_CFLAGS += -DGPAC_64_BITS
+endif
+
 if HARDSUBX_IS_ENABLED
 if OCR_IS_ENABLED
 ccextractorGUI_CFLAGS += -DENABLE_OCR 
